@@ -120,6 +120,25 @@ def esc(s):
     return html.escape(s or "")
 
 
+PAGER_JS = """<script>
+(function(){
+var secs = Array.prototype.slice.call(document.querySelectorAll('section'));
+var per = 7, page = 0, pages = Math.max(1, Math.ceil(secs.length / per));
+var info = document.getElementById('pageInfo');
+var prev = document.getElementById('prevBtn'), next = document.getElementById('nextBtn');
+function show(){
+  secs.forEach(function(s, i){ s.style.display = (i >= page*per && i < (page+1)*per) ? '' : 'none'; });
+  info.textContent = (page+1) + ' / ' + pages + ' 페이지';
+  prev.disabled = page === 0; next.disabled = page >= pages-1;
+  window.scrollTo(0, 0);
+}
+prev.onclick = function(){ if(page > 0){ page--; show(); } };
+next.onclick = function(){ if(page < pages-1){ page++; show(); } };
+show();
+})();
+</script>"""
+
+
 def render(data):
     entries = sorted(data["entries"], key=lambda e: e["date"], reverse=True)
     latest = entries[0] if entries else None
@@ -152,6 +171,7 @@ h1{{font-size:1.5rem;margin-bottom:4px}} .sub{{color:#666;margin-top:0}}
 section{{border-top:1px solid #eee;padding:18px 0}} section h2{{margin-top:0}}
 .theme{{color:#555}} .prod{{border:1px solid #e5e5e5;border-radius:10px;padding:12px;margin:10px 0}}
 .prod a{{color:#1a0dab}} .rank{{color:#666;font-size:.85rem}} .note{{color:#666;font-size:.85rem}}
+.pager{{margin:8px 0 20px;text-align:center}} .pager button{{padding:6px 14px;margin:0 8px;cursor:pointer}} .pager button:disabled{{opacity:.4;cursor:default}}
 footer{{color:#666;font-size:.85rem;margin-top:28px;border-top:1px solid #eee;padding-top:12px}}
 </style>
 </head>
@@ -159,6 +179,8 @@ footer{{color:#666;font-size:.85rem;margin-top:28px;border-top:1px solid #eee;pa
 <h1>💡 Product Hunt 일일 아이디어 인사이트</h1>
 <p class="sub">매일 Product Hunt 신규 제품의 pain point와 해결 아이디어를 정리하고, CK가 가져다 쓸 만한 아이디어를 골라 접목 방안을 제안합니다. {esc(latest_line)} · 원본 데이터: <a href="data/digests.json">digests.json</a></p>
 {days}
+<div class="pager" id="pager"><button id="prevBtn">← 이전</button><span id="pageInfo"></span><button id="nextBtn">다음 →</button></div>
+{PAGER_JS}
 <footer>
 출처: Product Hunt (producthunt.com) 및 각 제품 페이지. 제품 설명·수치는 원출처 기준이며, 메이커 주장 수치는 그대로 표기합니다. ·
 <a href="https://github.com/jeonck/product-hunt-board">GitHub 저장소</a>
