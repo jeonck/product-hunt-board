@@ -485,6 +485,97 @@
         "**Rakazo식 셀프호스팅 AI 팀메이트 + 승인 규칙을 홈랩 관측 스택에** — Kubespray 클러스터 위에서 자기 모델·키·감사 로그를 방화벽 안에 두고, 루틴(스케줄·웹훅)으로 QQQM·PH 보드 같은 일일 작업을 에이전트에 위임. \"사람 승인\"을 경계로 두는 패턴.",
         "**HuntMonitor식 실시간 레이스 대시보드를 PH 보드·QQQM 보드에** — 순위·속도·변동 추적 UI를 CK의 공개 보드(jeonck.github.io)에 얹어 \"오늘의 움직임\"을 한눈에. 정적 게시판에서 라이브 관측 보드로."
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "theme": "에이전트 인프라·거버넌스 데이 — IT 에이전트 승인제, 에이전트 테스트 샌드박스, 시크릿 격리 VM, Kafka 콘솔, AI 쇼핑 관측이 상위권. 어제 Rakazo·Talyn 흐름의 연장선.",
+      "products": [
+        {
+          "name": "readywhen",
+          "rank": "#2",
+          "url": "https://www.producthunt.com/products/readywhen",
+          "tagline": "",
+          "summary": "이메일로 일을 맡기면 후속 메일을 대신 쓰고 \"send\" 승인 후 발송, 답장 없으면 재촉까지 하는 이메일 개인 비서.",
+          "pain": "\"한 번만 후속 메일 보내면 되는데\"가 금요일까지 안 가고 머릿속에 남음. 누가 챙겨줄 사람이 없음.",
+          "idea": "assistant@readywhen.ai에 메일 보내면 초안 작성→본인 메일로 발송(승인 후)→답장 감시→무응답 시 재촉 제안. 1000개 이상 도구 연동, 발송 전 반드시 승인.",
+          "notes": []
+        },
+        {
+          "name": "OpenFrame",
+          "rank": "#4",
+          "url": "https://www.producthunt.com/products/openframe-3",
+          "tagline": "",
+          "summary": "소규모 IT팀용 AI 에이전트 2개 — Mingo가 패치·장애 조사·실행, Fae가 직원 요청 처리, 위험한 변경은 사람 승인 후.",
+          "pain": "IT 1~2명이 패치·온보딩·보안 알림·\"잠깐 질문\"에 하루를 씀. 대형 IT 스위트는 비싸고, 챗봇은 알려주기만 하고 실행은 안 함.",
+          "idea": "평문 지시→조사→계획→실행, 위험 작업은 승인 대기. 디바이스 관리·패치·배포·원격 접속·M365/Google Workspace·컴플라이언스·티켓을 한 곳에. $1/디바이스/월, 14일 무료.",
+          "notes": []
+        },
+        {
+          "name": "OpenBot",
+          "rank": "#5",
+          "url": "https://www.producthunt.com/products/copilotkit",
+          "tagline": "",
+          "summary": "셀프호스팅 가능한 기업용 에이전트 워크스페이스 — SSO/SCIM·승인 정책·감사 로그·지출 통제를 거버넌스로 내장.",
+          "pain": "에이전트에 회사 시스템을 맡기려면 누가 무엇을 읽고·바꾸고·보내고·쓰는지 책임 소재가 필요. 접근이 넓어지면 위험.",
+          "idea": "봇·역할·개인별 도구 접근 범위, 실행/승인/차단 정책, 감사 이벤트를 SIEM으로 내보내기, 지출 통제. MCP로 도구 연결, AG-UI로 기존 에이전트 연결. 개인 무료, 비즈니스 얼리 액세스.",
+          "notes": []
+        },
+        {
+          "name": "StateWeave",
+          "rank": "#11",
+          "url": "https://www.producthunt.com/products/stateweave",
+          "tagline": "",
+          "summary": "에이전트를 실제 앱의 \"동작하는 복제본\" 위에서 테스트 — Slack·Gmail·Salesforce·Stripe 등 동일 API·UI의 스테이트풀 샌드박스.",
+          "pain": "실제 앱에서 테스트하면 라이브 딜이 Closed Lost로 찍히는 사고 발생. 실무 앱엔 리셋 버튼이 없음. 목은 상태가 없어서 못 믿음.",
+          "idea": "실앱 API와 대조 검증한 복제본(에러 코드·페이징·속도 제한 포함), 자체 UI로 에이전트 행동 직접 확인, 장애·401 주입, 매 실행 새 복사본. URL만 바꾸면 연결. 무료.",
+          "notes": []
+        },
+        {
+          "name": "Kafkador",
+          "rank": "#21",
+          "url": "https://www.producthunt.com/products/kafkador",
+          "tagline": "",
+          "summary": "Kafka 클러스터를 한 화면에서 보고 관리하는 콘솔 — 토픽·메시지 탐색, 컨슈머 그룹·랙 실시간 추적, AI 어시스턴트 포함.",
+          "pain": "Kafka 작업이 CLI 명령어 뒤죽박죽 + 컨슈머 상태 추측. 새벽 2시 멈춘 컨슈머 디버깅이 고통.",
+          "idea": "터미널 없이 토픽·메시지 즉시 탐색, 컨슈머 랙 실시간, 토픽·설정 대시보드에서 관리. 베타 완전 무료.",
+          "notes": []
+        },
+        {
+          "name": "Docsy",
+          "rank": "#27",
+          "url": "https://www.producthunt.com/products/docsy-4",
+          "tagline": "",
+          "summary": "사람과 코딩 에이전트 모두를 위한 오픈소스 문서 — Markdown·OpenAPI·SDK 문서, YAML 설정, 셀프호스팅, 에이전트가 초안 PR로 문서 유지보수.",
+          "pain": "코드가 바뀌면 문서가 뒤처짐. 사람이 직접 고치기엔 귀찮고, 에이전트는 문서 구조를 못 읽음.",
+          "idea": "에이전트가 Markdown/JSON으로 문서를 읽고, 코드 변경의 영향 문서 찾기→업데이트→체크→초안 PR(머지는 사람 검토). ELv2 소스 공개, 외부 폰트 서비스 없음.",
+          "notes": []
+        },
+        {
+          "name": "AgentWatch",
+          "rank": "#32",
+          "url": "https://www.producthunt.com/products/agentwatch-ai-traffic-tracker",
+          "tagline": "",
+          "summary": "Shopify 스토어의 AI 쇼핑 에이전트 매출·노출을 모니터링 — ChatGPT·Gemini 등 AI 채널별 세션·주문·매출, 이상 징후 시 인시던트.",
+          "pain": "AI 어시스턴트 경유 구매가 늘는데 매출이 얼마인지 안 보이고, 조용히 멈춰도 모름.",
+          "idea": "Shopify AI 채널 어트리뷰션 기반 추적, Global Catalog 수요 확인, 카탈로그·카트·정책 표면 일일 점검, 기준선 대비 급락 시 증거付き 인시던트+메일. 읽기 전용, 고객 데이터 미저장. 무료 플랜 상시, 유료 $9/월부터.",
+          "notes": []
+        },
+        {
+          "name": "Zode",
+          "rank": "#33",
+          "url": "https://www.producthunt.com/products/zode",
+          "tagline": "",
+          "summary": "코딩 에이전트용 초저가 클라우드 VM — 1초 만에 포크, 플라이트 레코더·비용 장부, 시크릿은 호스트에만.",
+          "pain": "병렬 에이전트 샌드박스마다 Docker 이미지 재풀링, OOM 사망 원인 추적 불가, 브랜치별 토큰 비용 불명.",
+          "idea": "Postgres 켜진 실행 중 샌드박스를 1초 만에 포크(Docker·캐시·프로세스 유지), 리소스·프로세스·AI 호출·네트워크 플라이트 레코더, 샌드박스·브랜치·PR별 비용 장부, 루프 브레이커. 프롬프트 인젝션 시 더미 토큰만 유출+알림. 4vCPU/8GB 약 $0.035/시간, 무료 $10 크레딧.",
+          "notes": []
+        }
+      ],
+      "grafts": [
+        "**StateWeave식 \"실앱 복제본 + 장애 주입\" 테스트를 sdlc-runner 에이전트 평가에** — 에이전트가 Gmail·Slack·GitHub를 건드리는 워크플로를 실앱이 아닌 동일 API 복제본에서 돌리고, 401·속도 제한을 주입해 \"나쁜 날\" 동작까지 채점. AI Security 관점: 에이전트 평가의 재현성·안전성.",
+        "**Zode식 \"시크릿은 호스트에만 + 플라이트 레코더\"를 홈랩 Kubespray 에이전트 샌드박스에** — 에이전트에 키를 안 주고 나가는 길에 주입(어제 Talyn 제안의 연장), 리소스·AI 호출·네트워크 기록으로 \"어제 밤 에이전트가 뭘 했는지\"를 아침에 확인. 비용 장부는 QQQM·PH 보드 운영비 추적에도.",
+        "**OpenFrame식 \"위험 작업은 승인 대기\" + AgentWatch식 \"기준선 이탈 인시던트\"를 홈랩 관측 스택에** — OpenCTI·홈랩 알림에 사람 승인 경계를 두고, 트래픽·비용·에러가 기준선을 벗어나면 증거付き 인시던트 메일. 에이전트 자율성과 사람 통제의 접점."
+      ]
     }
   ]
 }
