@@ -819,6 +819,77 @@
         "**Manufact식 \"MCP 전용 애널리틱스 + 실제 클라이언트 대상 평가 + 세션 단위 도구 호출 추적\"을 홈랩·사이드 프로젝트 MCP 관측 모델로** — MCP 서버를 만들면 \"도구가 응답했다\"가 아니라 \"태스크가 끝났다\" 기준으로 평가하고, 실패 세션은 도구 호출 단위로 원인 추적. AI Security 관점에서는 도구 호출 로그가 곧 감사 추적이 됨.",
         "**Teaflask식 \"문서 주장 vs 코드 대조 드리프트 탐지 + 저장 대화 리플레이\"를 agentic SDLC 문서·런북 검증에** — 런북·설계 문서가 코드와 어긋나면 표시하고, 변경 전 저장된 대화를 리플레이해 회귀 확인. sdlc-runner의 계획→구현 단계에서 문서-코드 정합성을 자동 점검하는 게이트로 쓸 만함."
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "theme": "에이전트 신뢰·검증 데이 — 에이전트 샌드박스·거버넌스, CI 실패 가시성, 모델 내부 가시성, 자기치유 클라우드, 샌드박스 검증 추천, 기기 전체 차단. 어제 에이전트 검증·운영 흐름의 연장선, 오늘은 \"신뢰(trust)\" 쪽으로 무게 이동.",
+      "products": [
+        {
+          "name": "Docker",
+          "rank": "#3",
+          "url": "https://www.producthunt.com/products/docker",
+          "tagline": "",
+          "summary": "에이전트 시대를 위한 \"신뢰\" 중심의 새 Docker — MicroVM 기반 Docker Sandboxes(deny-by-default 네트워킹)에서 Claude Code·Codex 등 코딩 에이전트 실행, Docker AI Governance로 샌드박스·네트워크·MCP 정책을 한 번 정해 모든 머신에 강제.",
+          "pain": "에이전트는 의도를 가진 행위자(actor)인데 컨테이너는 프로세스 격리만 할 뿐 의도를 거버넌스하지 못함. 코딩 에이전트를 무인으로 돌릴 때 격리 스토리가 VM·컨테이너·기도 중 무엇인지 답이 없음.",
+          "idea": "신뢰할 수 있는 공급망 + MicroVM 샌드박스 + 정책 거버넌스 3단. 새 브랜드·Moby 리디자인 포함.",
+          "notes": []
+        },
+        {
+          "name": "Currents",
+          "rank": "#5",
+          "url": "https://www.producthunt.com/products/currents-4",
+          "tagline": "",
+          "summary": "CI의 모든 Playwright 테스트 기록을 Claude·Codex가 직접 읽게 — 호스티드 MCP 서버(OAuth 로그인) + Trace API로 실패·이력·트레이스를 에이전트에 제공, Claude/Codex 플러그인 디렉토리에서 클릭 한 번으로 연결.",
+          "pain": "에이전트가 코드를 짜고 \"완료\"라 해도 CI가 빨간불이면 에이전트는 모름. 사람이 대시보드를 열어 실패를 복사해 채팅에 붙여넣는 과정이 가장 느린 단계.",
+          "idea": "\"지난 main 실패 원인은? Jira 이슈 열어줘\", \"이번 주 가장 flaky한 테스트는?\" 같은 질문에 에이전트가 직접 답. fix-failing-tests 스킬이 실패 원인 수정→재실행→커밋 전 확인까지. Trace API는 트레이스 1개 조회에 4회 호출·약 1,600토큰(전체 파일은 약 20,000토큰).",
+          "notes": []
+        },
+        {
+          "name": "tensorViz",
+          "rank": "#8",
+          "url": "https://www.producthunt.com/products/tensorviz",
+          "tagline": "",
+          "summary": "코딩 에이전트가 PyTorch 모델 내부를 보게 — 실제 forward pass 1회로 모든 모듈·텐서 shape를 인터랙티브 그래프로, Claude Code·Codex·Cursor가 그래프를 검색해 측정된 shape를 읽고 추측이 아닌 증거로 모델 코드 수정. 무료·오픈소스(MIT).",
+          "pain": "에이전트는 PyTorch 소스는 읽지만 모델을 실제로 흐르는 텐서는 못 봄. 레이어 하나 고치면 세 모듈 뒤에서 shape mismatch가 터지고 원인을 추측만 함.",
+          "idea": "예제 입력 한 번 저장하면 forward pass 실행→그래프 생성, 노드 클릭 시 에이전트도 선택 위치 공유. 560개 이상 최신 논문 모델 그래프를 담은 Model Explorer는 설치 없이 열람 가능. 한계: CPU forward pass만, 초대형 모델은 부분 그래프.",
+          "notes": []
+        },
+        {
+          "name": "Volcano",
+          "rank": "#9",
+          "url": "https://www.producthunt.com/products/volcano-3",
+          "tagline": "",
+          "summary": "Kong의 자기치유(self-healing) 에이전트 클라우드 — 백엔드·DB·인증·스토리지·실시간·워크플로·승인·샌드박스·락을 한 프로젝트에, LavaFlow가 실행 중인 버그를 스스로 찾아 수정.",
+          "pain": "에이전트 하나 만들려면 호스팅·DB·인증·스토리지·실시간·승인·샌드박스를 따로 엮고 접착 코드를 써야 하고, 고장 나면 사람이 찾아 고칠 때까지 멈춤.",
+          "idea": "1년짜리 durable function, human-in-the-loop 승인, 재개 가능 샌드박스, 자기갱신 분산 락, 브랜치 가능한 Postgres, 기본 비공개 파일 스토리지. Claude Code·Codex·Cursor·OpenCode·Pi에서 바로 배포. 무료 플랜 있음.",
+          "notes": []
+        },
+        {
+          "name": "pickfit",
+          "rank": "#53",
+          "url": "https://www.producthunt.com/products/pickfit",
+          "tagline": "",
+          "summary": "추천하기 전 샌드박스에서 직접 설치·동작 검증하는 무료 소프트웨어 어드바이저 — 새 Linux 샌드박스에 설치해 기능 동작 확인, 단계 오프라인 리플레이까지 마친 뒤에만 추천. 인기(별) 순이 아닌 적합도 순, 작은 오픈소스 hidden gem 표시.",
+          "pain": "AI가 소프트웨어를 싸게 만들면서 새 도구가 매일 쏟아지는데, 검색은 인기순, 모델은 컷오프 이후 출시를 모르고, 작은 프로젝트는 설치 단계가 깨져 있는 경우가 많음. 안 되는 README에 오후를 날림.",
+          "idea": "프로젝트 1,154개 읽고 813개 설치 이상 검증(메이커 발표 수치). MCP 서버(pickfit.app/mcp) 제공 — 에이전트가 직접 조회. 무료, 광고·제휴 링크 없음, 벤더 중립.",
+          "notes": []
+        },
+        {
+          "name": "NetSieve",
+          "rank": "#44",
+          "url": "https://www.producthunt.com/products/netsieve",
+          "tagline": "",
+          "summary": "브라우저가 아닌 Mac 전체의 광고·트래커·스캠 차단 — 모든 앱·위젯·백그라운드 서비스의 통신을 커버, 약 20만 개 스캠·피싱 사이트 차단, \"데이터가 어느 나라로 가는지\"까지 표시. 클라우드 없음, 트래픽 내용 미열람.",
+          "pain": "브라우저 광고 차단기는 브라우저만 커버. 앱·위젯·백그라운드 서비스는 광고·분석 회사와 계속 통신하는데 사용자는 볼 수 없음.",
+          "idea": "일시 정지·종료·라이선스 만료 시 원래 설정 그대로 복원(인터넷을 망가뜨리지 않음), \"사이트가 안 됨\" 시 차단 해제한 뒤 해당 사이트가 필요로 한 것만 정확히 보여줘 최소 허용. 폰·TV도 Mac을 경유해 커버. 일회성 구매 €14.99/년 또는 €99.99 평생, Apple silicon 필요, PH50 코드 50% 할인.",
+          "notes": []
+        }
+      ],
+      "grafts": [
+        "Docker Sandboxes + AI Governance식 \"에이전트 실행 전 샌드박스·네트워크·MCP 정책을 한 번 정해 전 머신 강제\"를 sdlc-runner 실행 게이트로 — 코딩 에이전트는 deny-by-default MicroVM/격리 네임스페이스 안에서만 도구를 실행하고, 네트워크·MCP 허용 목록은 프로젝트 정책 파일로 버전 관리. 홈랩 Kubespray에 에이전트 전용 격리 네임스페이스 + NetworkPolicy로 바로 실험 가능.",
+        "Currents식 \"CI 실패를 에이전트가 직접 읽고 고치는 루프 + 토큰 절약형 Trace API\"를 sdlc-runner 완료 검증에 — \"완료\" 선언 전 에이전트가 CI 실패·이력·트레이스를 직접 조회해 수정→재실행하고, 실패 원인은 사람이 복사해 붙여넣지 않음. cti-sentinel·OpsForge의 Playwright/GitHub Actions CI에 MCP 연결 형태로 적용 가능.",
+        "pickfit식 \"채택 전 샌드박스에서 설치·동작 검증\"을 agentic SDLC 의존성·도구 채택 게이트로 — 에이전트가 제안하는 라이브러리·MCP 서버·CLI 도구는 바로 쓰지 않고 격리 샌드박스에서 설치·실행 검증 후 채택, 실패 단계는 증거로 기록. CK가 11/11에 관심 보인 Jev 판별모델 사전 필터와 같은 \"믿기 전 검증\" 결 — 의존성 추가 단계의 done 조건으로."
+      ]
     }
   ]
 }
