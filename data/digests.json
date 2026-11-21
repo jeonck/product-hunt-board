@@ -890,6 +890,87 @@
         "Currents식 \"CI 실패를 에이전트가 직접 읽고 고치는 루프 + 토큰 절약형 Trace API\"를 sdlc-runner 완료 검증에 — \"완료\" 선언 전 에이전트가 CI 실패·이력·트레이스를 직접 조회해 수정→재실행하고, 실패 원인은 사람이 복사해 붙여넣지 않음. cti-sentinel·OpsForge의 Playwright/GitHub Actions CI에 MCP 연결 형태로 적용 가능.",
         "pickfit식 \"채택 전 샌드박스에서 설치·동작 검증\"을 agentic SDLC 의존성·도구 채택 게이트로 — 에이전트가 제안하는 라이브러리·MCP 서버·CLI 도구는 바로 쓰지 않고 격리 샌드박스에서 설치·실행 검증 후 채택, 실패 단계는 증거로 기록. CK가 11/11에 관심 보인 Jev 판별모델 사전 필터와 같은 \"믿기 전 검증\" 결 — 의존성 추가 단계의 done 조건으로."
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "theme": "에이전트 거버넌스·안전망 데이 — 출시 이후에도 에이전트가 지표를 보고 스스로 고치는 루프, 에이전트 실수 되돌리기, 경로 단위 접근 통제, 에이전트 간 공유 메모리 통제. 11/19~20 에이전트 검증·신뢰 흐름의 연장선, 오늘은 \"에이전트에게 어디까지 맡기고 어떻게 되돌릴 것인가\" 쪽으로 무게 이동.",
+      "products": [
+        {
+          "name": "Stitch Loop",
+          "rank": "",
+          "url": "https://www.producthunt.com/products/stitch-loop",
+          "tagline": "",
+          "summary": "Google Labs의 상시 가동 프로덕트 에이전트 — 라이브 메트릭을 보고 고칠 것을 골라 격리 클라우드 샌드박스에서 수정하고 GitHub PR로 열어 사람이 승인, 머지 후 지표가 실제로 움직였는지 계속 확인. 기본 루프 3개(보안·지연·접근성), 보안 루프는 Gemini 4 Carbon + DeepMind CodeMender.",
+          "pain": "코딩 에이전트의 일은 PR 머지에서 끝남. 출시 후 취약점 패치·체크아웃 속도·가입 이탈 분석 같은 일은 계속 쌓이는데, 어느 변경 하나가 가장 중요한지 신호가 로그·행동·피드백 곳곳에 흩어져 있음.",
+          "idea": "목표 기반 evergreen loop 4단계(제안→해결책+트레이드오프→샌드박스 빌드+PR→지표 반영 확인). 180개 이상 통합·커스텀 MCP·CLI로 컨텍스트 연결, Antigravity 같은 다른 코딩 에이전트도 Stitch CLI/MCP로 컨텍스트 공유. 전 세계 대기자 명단, Google AI Ultra 우선.",
+          "notes": []
+        },
+        {
+          "name": "Glassmail",
+          "rank": "#4",
+          "url": "https://www.producthunt.com/products/glassmail",
+          "tagline": "",
+          "summary": "AI가 Mac을 절대 떠나지 않는 빠른 네이티브 Mac 메일 앱 — Apple Intelligence 또는 Gemma/Qwen 소형 로컬 모델로 요약·초안·AI 검색, 오프라인에서도 동작. Claude·Claude Code·Codex·Cursor가 메일 검색·읽기는 가능하되 매번 허용/거부, 발송·삭제는 불가.",
+          "pain": "현대 메일 앱은 월 $10–30 구독에 AI가 읽으려고 메일을 자기 서버로 보냄. 무료 앱은 2012년 수준에 멈춤. \"예쁜 네이티브 앱 + 온디바이스 AI + 한 번만 결제\"라는 세 번째 선택지가 없음.",
+          "idea": "Glassmail 자체 메일 서버 없음 — Mac이 제공자와 직접 통신, 비밀번호는 Keychain 보관. LM Studio/Ollama 연동도 가능. 일회성 결제 $29(선착순 100명 이후 $49), 14일 무료 체험, macOS 14 이상.",
+          "notes": []
+        },
+        {
+          "name": "Shipyard",
+          "rank": "#13",
+          "url": "https://www.producthunt.com/products/shipyard",
+          "tagline": "",
+          "summary": "Claude Code·Cursor·Codex 안에서 도메인·DNS·호스팅·DB·이메일·결제까지 자동 세팅하는 로컬 CLI + MCP 서버 — 계정 한 번 연결하면 새 제품마다 약 1시간 만에 자기 도메인에 라이브, 코딩 도구에는 실제 스택에 맞춘 빌드 프롬프트를 건넴.",
+          "pain": "AI가 코드를 몇 분 만에 짜는데, 진짜 병목은 통합 잡일 — 도메인 구매·DNS·호스팅·DB·이메일 인증·Stripe·시크릿 관리에 제품당 약 12시간. 설정이 귀찮아 시작조차 안 하는 아이디어가 쌓임.",
+          "idea": "만들 것과 비용을 미리 검토받고(지출은 승인 필요) 실행 버튼 한 번. 중단해도 만든 것은 계속 동작. shipyardmcp.com 자체가 이 방식으로 런치됨.",
+          "notes": []
+        },
+        {
+          "name": "gitroots",
+          "rank": "#21",
+          "url": "https://www.producthunt.com/products/gitroots",
+          "tagline": "",
+          "summary": "GitHub 위의 거버넌스 레이어 — 개발자·팀·AI 에이전트마다 경로 단위 접근만 부여(나머지는 안 보임), 변경은 웹·모바일·CLI에서 승인하는 싱크 요청으로, 누가·어느 레포에서·언제 무엇을 했는지 검색 가능한 감사 이력.",
+          "pain": "외주·파트너에게 일 맡기려면 레포 전체를 넘겨줘야 했고, AI 코딩 에이전트가 같은 문제를 더 키움. Git 제공자는 \"누가 접근 가능한지\"는 알지만 \"각자 실제로 무엇을 할 수 있는지\"는 통제 못 함.",
+          "idea": "오버레이(매핑한 경로만 담은 별도 목적지)에만 푸시, 변경은 매핑 검사 후 승인 전까지 소스에 닿지 않음. Claude Code·Codex 등 에이전트도 사람과 동일한 검사·승인 통과. Starter 무료, 유료 $19/월부터.",
+          "notes": []
+        },
+        {
+          "name": "AI Context Flow MCP",
+          "rank": "",
+          "url": "https://www.producthunt.com/products/ai-context-flow",
+          "tagline": "",
+          "summary": "모든 AI 도구·에이전트·팀에 동기화되는 통제 가능한 메모리 레이어 — MCP 서버 한 번 연결하면 Claude에 저장한 것을 ChatGPT·Grok·Cursor가 같은 버전으로 읽음. 프로젝트·고객별 버킷, 접근 권한, 전체 버전 이력과 롤백, Memory Studio.",
+          "pain": "AI 도구 10개면 기억도 10개로 흩어져 서로 어긋나고, 누가 무엇을 바꿨는지 기록도 없음. ChatGPT 메모리는 Claude·Gemini·Cursor에 닿지 않아 매번 다시 설명해야 함.",
+          "idea": "\"AI 컨텍스트는 정크 서랍이나 블랙박스가 아니라, 정리되고 내 조건으로 공유되며 항상 되돌릴 수 있어야 한다\" — 버킷별 역할(기여자/뷰어), 활동 로그, 에이전트가 잘못 덮어써도 버전 복원. 5,000명 이상 사용, 7일 무료 체험.",
+          "notes": []
+        },
+        {
+          "name": "Codemany",
+          "rank": "",
+          "url": "https://www.producthunt.com/products/codemany",
+          "tagline": "",
+          "summary": "자기 인프라에서 GitHub Actions 실행 — 잡마다 새 VM의 fresh 러너, 고장 러너 자동 교체·자체 업데이트·정리. runs-on 한 줄만 바꾸면 됨. 메이커 주장 3배 빠름(매일 공개 벤치마크), 분당 과금 없음, 월 $20에 머신 2대.",
+          "pain": "GitHub 호스티드 러너 요금이 쌓이고 느림 — 메이커는 10월 Actions 청구 $582. 셀프호스트 러너는 직접 띄우고 유지·정리하는 손이 많이 듦.",
+          "idea": "남는 Mac·Linux 머신을 러너 팜으로 — 호스트/유저별/VM 격리 모드 3종, 잡 끝나면 러너 폐기. 메이커 CI 10월 $215 → 11월 현재 $4, 연간 약 $2,400 절감 주장. 14일 무료, Apple silicon Mac·Linux.",
+          "notes": []
+        },
+        {
+          "name": "UndoGuard",
+          "rank": "",
+          "url": "https://www.producthunt.com/products/undoguard",
+          "tagline": "",
+          "summary": "자율 AI 에이전트용 Ctrl+Z — 에이전트와 API 사이에 앉는 롤백 프록시 + MCP 서버. 변경 API 호출 전 현재 상태를 자동 스냅샷·AES-256 암호화 감사 로그로 저장, 실수하면 단일 액션 또는 세션 전체를 1클릭·1 API 호출로 되돌림.",
+          "pain": "팀은 에이전트에 읽기 권한은 주지만 쓰기 권한(POST/PUT/PATCH/DELETE) 앞에서는 멈춤 — 잘못된 프롬프트나 환각 한 번에 운영 고객 레코드를 덮어쓰거나 지울 수 있음.",
+          "idea": "변경 전후 상태를 세션 ID에 묶어 암호화 저장, Time-Travel 대시보드에서 최신→오래된 순 세션 롤백. Claude Desktop·Cursor는 MCP로, n8n·LangChain·커스텀 에이전트는 REST 프록시로. 무료 키 월 1,000회 액션, 라이브 샌드박스에서 시뮬레이션 가능.",
+          "notes": []
+        }
+      ],
+      "grafts": [
+        "Stitch Loop식 \"지표 기반 evergreen loop + 샌드박스 수정 + PR 승인 + 머지 후 지표 재확인\"을 sdlc-runner의 운영(런 이후) 단계로 — 배포가 끝이 아니라 시작: 에이전트가 라이브 메트릭(Prometheus/Grafana)을 보고 고칠 이슈를 골라 샌드박스에서 수정→PR로 올리고, 머지 후 지표 이동을 확인하는 루프를 done 조건에 추가. cti-sentinel·OpsForge의 GitHub Actions CI + 메트릭 파이프라인에 연결하면 \"완료 선언 후에도 지켜보는\" SDLC가 됨.",
+        "UndoGuard식 \"변경 전 스냅샷 + 세션 단위 롤백\"을 sdlc-runner 에이전트 실행의 안전망으로 — 에이전트가 파일·API·DB를 건드리기 전 상태를 스냅샷하고, 실패하면 해당 세션 전체를 한 번에 되돌리는 게이트. 홈랩 Kubespray 격리 네임스페이스 + Git 스냅샷 조합으로 바로 실험 가능. 어제 pickfit 샌드박스 검증과 같은 \"믿기 전 검증\" 결 — 실행 전 검증(샌드박스)과 실행 후 복구(롤백)가 한 쌍.",
+        "gitroots식 \"경로 단위 접근 + 승인 워크플로 + 감사 이력\"을 멀티 에이전트 협업 거버넌스로 — 병렬로 도는 서브에이전트마다 볼 수 있는 경로를 제한하고, 변경은 승인 요청으로만 머지, 누가·언제·무엇을 바꿨는지 감사 로그를 남김. sdlc-runner의 에이전트 간 충돌·과도한 권한 문제를 구조적으로 막는 패턴 — 코딩 에이전트에게 레포 전체를 맡기지 않는 최소권한 원칙."
+      ]
     }
   ]
 }
