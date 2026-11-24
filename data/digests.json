@@ -1143,6 +1143,87 @@
         "Plango식 \"코딩 에이전트 감시 + 시크릿·파일 접근 통제 + 의심 네트워크 차단, 온디바이스\"를 sdlc-runner 실행 환경의 보안 레이어로 — 에이전트가 밤새 돌 때 접근 가능한 파일·네트워크를 정책으로 묶고 시크릿 유출 시도를 차단. 어제 Render Sandboxes 격리 microVM과 한 쌍을 이룸(격리 + 감시).",
         "Inkling 2 Mini식 \"26B 루프 모델 + Ollama 로컬 + 사실은 검색·도구에 위임\"을 모듈러 RAG의 로컬 LLM 후보로 평가 — Qwen3-8B 결정과 비교해 루프 추론이 멀티스텝 에이전트 작업에서 유리한지, 20GB 메모리 풋프린트가 홈랩에서 감당 가능한지 테스트해볼 만한 대안."
       ]
+    },
+    {
+      "date": "2026-11-24",
+      "theme": "에이전트 \"운영·관제·통제\" 데이의 연장선 — 비주얼 워크스페이스에서 에이전트 팀을 굴리는 Granular, 인박스를 에이전트와 안전하게 공유하는 Clam AI의 MCP 권한 레이어, PR을 리뷰·수정·승인까지 넘기는 Claude Ship, 코딩 에이전트 함대 관제실 Fleetify까지. 에이전트를 \"어떻게 믿고 맡기느냐\"가 오늘 보드의 중심축. 여기에 코딩 에이전트에게 데모 영상까지 시키는 tday, MCP로 회사 운영까지 들어간 doola가 가세.",
+      "products": [
+        {
+          "name": "distribution.dev",
+          "rank": "#1",
+          "url": "https://www.producthunt.com/products/distribution-dev",
+          "tagline": "",
+          "summary": "daily.dev × DEV(dev.to)가 만든 개발자 대상 광고 네트워크 — 캠페인 하나를 만들면 여러 개발자 사이트에 동시에 집행, 각 사이트에 맞게 광고를 자동 조정.",
+          "pain": "누구나 제품을 만들 수 있는 시대라 알리는 게 어려움. 개발자는 광고를 무시하고 수백 개 독립 사이트·커뮤니티에 흩어져 있어 도달 자체가 어려움.",
+          "idea": "캠페인 한 번 설정 → daily.dev·DEV 등 개발자 사이트 네트워크에 동시 집행 → 사이트별 네이티브 형태로 광고 자동 맞춤(광고 표기는 유지). 퍼블리셔도 네트워크 참여 가능. PH 특전: 캠페인 $500 할인.",
+          "notes": []
+        },
+        {
+          "name": "Granular.Build",
+          "rank": "#2",
+          "url": "https://www.producthunt.com/products/granular-build",
+          "tagline": "",
+          "summary": "AI 에이전트 팀을 비주얼 워크스페이스에서 굴리는 도구 — 보스 에이전트가 목표를 받아 여러 모델의 워커 에이전트를 병렬 투입, 프로젝트를 \"브레인\"(미션·의사결정·로드맵)으로 관리.",
+          "pain": "에이전트 작업이 브라우저 탭 수십 개·흩어진 터미널·공유 메모리 없음·동시 2~3개 이상 못 굴리는 상태로 파편화. 터미널은 에이전트끼리 작업 덮어쓰고, IDE는 개발자용 1개 레포 창, 데스크톱 앱은 1개 모델·1개 채팅에 갇힘.",
+          "idea": "폴더를 가리키면 미션·오디언스·결정을 적어 로드맵으로 전환 → 보스 에이전트가 Claude·Codex·Gemini·DeepSeek 등 모델별 워커를 각자 전용 터미널·프로젝트 복사본에 투입(덮어쓰기 방지) → 1,400+ 앱 연결, API 키는 암호화 볼트에 보관, 파일은 내 컴퓨터에 그대로. 무료 2프로젝트·세션당 4개, Pro 50% 할인(LAUNCH 코드 LEGENDARY50).",
+          "notes": []
+        },
+        {
+          "name": "Clam AI",
+          "rank": "#3",
+          "url": "https://www.producthunt.com/products/clam-ai",
+          "tagline": "",
+          "summary": "인박스를 에이전트와 안전하게 공유 — Gmail을 에이전트가 아니라 Clam에 연결하고, 각 에이전트의 권한을 평문 규칙으로 정해 \"읽기만·초안만·절대 발송 금지\"를 강제하는 MCP용 권한 레이어.",
+          "pain": "자율 에이전트 시대의 문제는 능력보다 \"얼마나 접근을 허용할 것인가\". 인박스는 비밀번호 재설정·은행 알림·건강 정보까지 통과하는 마스터 키인데, 에이전트에게 통째로 맡기긴 불안함.",
+          "idea": "평문 규칙(\"여행 메일 읽고 일정 짜줘. 호스트 답장은 초안만. 절대 발송 금지\")으로 에이전트별 허용 범위 지정 → 규칙은 발신자 목록이 아니라 의미로 동작(새 발신자의 청구서도 청구서로 인식) → \"먼저 물어봐\"로 표시한 행동은 앱·WhatsApp·Telegram·Slack에서 승인 대기 → 모든 행동을 허용/차단 로그로 기록(어떤 규칙이 결정했는지 포함). 이메일은 저장 안 함. Claude·ChatGPT·Gemini·Codex 등 MCP 연결 에이전트 모두 지원. Gmail 캡드 베타, 14일 무료 체험.",
+          "notes": []
+        },
+        {
+          "name": "doola MCP",
+          "rank": "#6",
+          "url": "https://www.producthunt.com/products/doola-mcp",
+          "tagline": "",
+          "summary": "AI 어시스턴트 채팅에서 미국 회사 설립·운영 — 50개 주 LLC/C-Corp 설립부터 EIN 서류·컴플라이언스 마감·P&L·Shopify 매출 추세까지 MCP로 조회·실행.",
+          "pain": "회사 설립은 쉬워졌지만 운영 행정(EIN 서류 찾기, 마감일 챙기기, 장부·매출 확인)이 열지 않는 탭들에 흩어져 있음. 창업자는 \"회사 설립\"이 아니라 \"회사 운영\" 도움을 원함.",
+          "idea": "mcp.doola.com을 ChatGPT·Claude 등 MCP 지원 도구에 연결 → 채팅 한 줄로 설립(\"델라웨어에 C-Corp 만들어줘\")부터 \"EIN 서류 어디 있어?\", \"다음 마감 뭐야?\", \"지난 분기 P&L 내려줘\"까지 질문 → 실제 서류 처리는 doola 전문가가 백엔드에서 수행. 4월 첫 런치(와이오밍 LLC 설립만)에서 운영 기능까지 확장된 두 번째 런치.",
+          "notes": []
+        },
+        {
+          "name": "tday.com",
+          "rank": "#7",
+          "url": "https://www.producthunt.com/products/tday",
+          "tagline": "",
+          "summary": "코딩 에이전트에게 한 줄로 시켜 만드는 내레이션 데모 영상 — 에이전트가 내 머신에서 앱 복사본을 띄워 기능을 직접 클릭하고, tday가 커서·줌·자막·브랜드를 입힌 내레이션 영상으로 변환.",
+          "pain": "좋은 데모 영상은 대본·녹화·재녹화·녹음·편집에 몇 시간이 걸려 대부분 기능이 데모 없이 출시됨.",
+          "idea": "Claude Code·Cursor·Codex에 \"새 export 기능 데모 찍어줘\" 한 줄 → 에이전트가 내 머신에서 앱 복사본을 실행해 실제 기능 클릭 → tday가 내레이션·커서·줌·자막·브랜드를 입혀 영상 완성 → 내레이션 문장별 편집 가능, 런치·문서·체인지로그에 사용. 실제 앱(로컬호스트·미출시 기능 포함) 녹화, 코드는 내 머신을 안 떠남, 웹·데스크톱·터미널·iOS·Android 지원. 무료 5개 데모 저장, Pro 첫 달 50% 할인(코드 PRODUCTHUNT, 11/28까지).",
+          "notes": []
+        },
+        {
+          "name": "Claude Ship",
+          "rank": "#11",
+          "url": "https://www.producthunt.com/products/claude-code",
+          "tagline": "",
+          "summary": "PR을 열면 리뷰·수정·승인까지 Claude가 이어받는 파이프라인 — Code Review가 검증된 지적을 달고, PR Steward(베타)가 CI 실패·충돌·리뷰 피드백을 고치고, Claude Approvals(베타)가 팀 정책 파일 기준으로 일상 변경을 승인.",
+          "pain": "PR이 열리고 머지 준비까지의 과정(리뷰 지적 확인, CI 실패 수정, 충돌 해결, 승인 대기)이 사람 손을 계속 붙잡고 있어 \"코드 쓰는 속도\"만큼 \"출시 속도\"가 안 나옴.",
+          "idea": "`/ship` 한 번이면 푸시→PR 생성→인계 → Code Review가 검증된 발견만 코멘트 → PR Steward가 CI 실패·충돌·리뷰 피드백을 수정(단, 머지는 절대 안 함) → Claude Approvals가 정책 파일 기준 일상 변경은 승인, 나머지는 사람에게 질문. Claude Team·Enterprise, GitHub 대상.",
+          "notes": []
+        },
+        {
+          "name": "Fleetify",
+          "rank": "#12",
+          "url": "https://www.producthunt.com/products/fleetify",
+          "tagline": "",
+          "summary": "오픈소스 AI 코딩 에이전트 커맨드 센터(데스크톱 앱) — Claude Code·Codex·OpenCode 등 10개 에이전트를 나란히 실행하고 Fleet 허브에서 상태·지출·토큰을 한눈에 관제.",
+          "pain": "코딩 에이전트가 2개만 돼도 화면이 터미널로 가득 차고, 어느 에이전트가 막혔는지·토큰을 얼마나 태우는지·둘이 같은 파일을 건드리는지 추적이 안 됨.",
+          "idea": "에이전트 10종 + OpenAI·Anthropic·Gemini·Ollama 모델을 나란히 실행 → Fleet 허브에서 세션별 상태·지출·토큰·실시간 활동 표시 → 작업마다 git worktree 분리, 프리뷰 후 앱에서 PR 열기 → 플러그인은 한 번 설치하면 지원 에이전트 전체에 적용. 무료·Apache-2.0, Rust+Tauri, macOS·Windows·Linux. GitHub: fleetifydev/fleetify.",
+          "notes": []
+        }
+      ],
+      "grafts": [
+        "Clam AI식 \"평문 규칙 + 의미 기반 허용/차단 + 승인 대기 + 행동 로그\"를 sdlc-runner의 에이전트 권한 레이어로 — 에이전트에게 Gmail·시크릿·파일 접근을 통째로 맡기지 말고, 작업별 평문 규칙과 \"먼저 물어봐\" 승인 게이트를 표준으로. Plango(11/23)의 온디바이스 감시와 한 쌍을 이루는 실행 통제.",
+        "Claude Ship식 \"리뷰→수정→승인, 머지는 사람만\" 파이프라인을 sdlc-runner의 PR 단계에 — 에이전트가 CI 실패·충돌·리뷰 피드백을 고치되 머지 권한은 사람에게 남기는 정책 파일 기반 승인 게이트를 도입하면, agentic SDLC의 마지막 병목을 줄이면서도 통제권을 지킬 수 있음.",
+        "Fleetify식 \"에이전트 함대 허브(상태·지출·토큰·worktree 분리)\"를 홈랩 에이전트 운영 대시보드로 — 여러 에이전트를 병렬로 돌릴 때 토큰 지출·막힌 세션·파일 충돌을 한 화면에서 보고, 작업마다 worktree를 나눠 덮어쓰기를 막는 구조를 sdlc-runner 실행 환경에 접목."
+      ]
     }
   ]
 }
