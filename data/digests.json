@@ -1305,6 +1305,87 @@
         "SteerLatch식 \"OAuth MCP + 명시적 권한 + STOP/취소 + 로컬 승인 유지\"를 홈랩·개인 머신에서 에이전트를 돌릴 때의 접근 통제 패턴으로 — Clam AI(11/24)의 평문 규칙과 한 쌍으로, 에이전트에게 컴퓨터 접근을 줄 때의 최소 권한·긴급 정지·감사 로그를 sdlc-runner 실행 환경의 기본값으로.",
         "Unify Continual-ARC식 \"메모리를 지우고 자기 자신과 비교\" 검증을 ReMe/Mem0 메모리 계층에 — 에이전트가 \"기억한다\"고 주장할 때, 메모리 초기화 상태에서 본 적 있는 작업 vs 처음 보는 작업을 분리 채점하는 벤치마크를 두면, 메모리 기능이 실제로 학습으로 이어지는지 검증할 수 있음."
       ]
+    },
+    {
+      "date": "2026-11-26",
+      "theme": "\"에이전트 함대 운영\"의 날 — Hub·DeskFleet·AgentDE가 나란히 다중 코딩 에이전트 관리에 도전. 어제 \"에이전트를 어디서든 닿게 하기\"에서 오늘은 \"함대를 어떻게 굴리고 검증하느냐\"로. 여기에 장기 기억(Remora), AI 작업 검증(Ottante·NEXUS), AI 크롤러 시점의 웹사이트 가시성(Bifura)까지.",
+      "products": [
+        {
+          "name": "Hub",
+          "rank": "#1",
+          "url": "https://www.producthunt.com/products/hub-20",
+          "tagline": "",
+          "summary": "Claude Code·Codex 세션 100개를 5개처럼 굴리는 오픈소스 디스패처 — 브라우저나 텔레그램에 평문 목표를 쓰면 코디네이터가 에이전트에 배분하고 결정만 사람에게 돌려줌.",
+          "pain": "세션 10개만 돼도 어느 게 멈췄고 어느 게 나를 기다리는지 알 수 없어, 로봇 팀의 CTO 일을 손으로 하게 됨.",
+          "idea": "코디네이터가 목표를 에이전트에 분배 + 결정만 사람에게 전달. 셀프호스팅·Apache-2.0·무료, 자기 구독 사용. 9/20 이후 MR 546건 병합(메이커 주장). 단, 에이전트가 허락 없이 실행하니 Security.md를 먼저 읽어야 함.",
+          "notes": []
+        },
+        {
+          "name": "Bifura",
+          "rank": "#5",
+          "url": "https://www.producthunt.com/products/bifura",
+          "tagline": "",
+          "summary": "AI 에이전트가 내 웹사이트를 어떻게 보는지 보여주는 도구 — AI 크롤러 시점으로 페이지를 가져와 오해한 부분과 30/60/90일 개선 계획을 제시.",
+          "pain": "AI 어시스턴트가 구매자를 대신해 웹사이트를 읽는데, 내 페이지가 기계 눈에 어떻게 보이는지 알 방법이 없음.",
+          "idea": "크롤러 방식 fetch + 샌드박스에서 수정 테스트 후 배포, 시간 경과에 따른 변화 추적. 무료 에이전트 준비도 점수 1분 이내·가입 불필요.",
+          "notes": []
+        },
+        {
+          "name": "DeskFleet",
+          "rank": "#7",
+          "url": "https://www.producthunt.com/products/deskfleet",
+          "tagline": "",
+          "summary": "팀 머신에 흩어진 코딩 에이전트를 공유 세션으로 묶는 도구 — 동료가 같은 세션을 열어 diff를 보고 다음 명령을 승인하거나 원격 데스크톱을 직접 조사.",
+          "pain": "에이전트 대화가 남의 노트북 터미널 탭에 갇혀 있어, 두 번째 눈이 필요할 때 파일·스크린샷·대화록을 넘겨야 함.",
+          "idea": "공유 세션 + 원격 데스크톱 접근, 도구·자격증명은 작업 머신에 그대로 유지. 브라우저 데모에서 샘플 데이터로 공유 세션 체험 가능.",
+          "notes": []
+        },
+        {
+          "name": "Remora",
+          "rank": "#9",
+          "url": "https://www.producthunt.com/products/remora-6",
+          "tagline": "",
+          "summary": "AI 에이전트용 장기 기억 인프라 — 대화 인제스트·사실 중복 제거·15ms 미만 하이브리드 회상, PostgreSQL + pgvector 기반.",
+          "pain": "LLM은 세션을 넘기면 기억을 잃고, 매 프로젝트마다 벡터 테이블·동기화 크론·충돌하는 사실 디버깅을 처음부터 다시 만듦.",
+          "idea": "사용자 선호가 바뀌면 구 사실을 자동 대체해 프롬프트 오염 방지 + AES-256-GCM·BYOK + LangChain/LlamaIndex/CrewAI용 SDK. 30일 무료 체험.",
+          "notes": []
+        },
+        {
+          "name": "Ottante",
+          "rank": "#33",
+          "url": "https://www.producthunt.com/products/ottante",
+          "tagline": "",
+          "summary": "AI 에이전트 작업이 끝날 때마다 맥에서 직접 검증 — 프로젝트를 참조 모델과 비교해 새로 생긴 차이만 알려줌.",
+          "pain": "AI가 \"완료\"라고 해도 안 된 경우가 잦고, 파일 단위 손검사가 작업 자체보다 오래 걸림.",
+          "idea": "검사 자체는 AI 없이 수행(구독 소모 없음)·온디바이스·텔레메트리 없음. 의도한 차이는 한 번 표시하면 다시 오류로 안 뜸. 무료 + Pro €49 일회성.",
+          "notes": []
+        },
+        {
+          "name": "AgentDE",
+          "rank": "#33",
+          "url": "https://www.producthunt.com/products/agentde",
+          "tagline": "",
+          "summary": "모든 코딩 에이전트를 하나의 네이티브 맥 창에 — 탭 아이콘 색으로 작업 중/대기/완료 표시, ⌘-클릭으로 에이전트가 언급한 파일 바로 열기.",
+          "pain": "에이전트 12개를 여러 터미널·IDE에 띄우면 어느 게 나를 기다리는지 놓침.",
+          "idea": "Workstreams(MCP 경유 공유 작업 기록, 압축 후에도 복원) + 탭은 앱을 껐다 켜도 유지, 30개 탭에 메모리 약 0.4GB. 무료·MIT, Claude Code가 25k줄 Swift를 직접 작성(메이커 주장).",
+          "notes": []
+        },
+        {
+          "name": "NEXUS",
+          "rank": "#37",
+          "url": "https://www.producthunt.com/products/nexus-42",
+          "tagline": "",
+          "summary": "AI가 바꾸기 전에 코드베이스를 로컬에서 먼저 지도화 — 모듈·import·의존성 사이클을 AI 없이 인덱싱, 에이전트는 승인받은 것만 별도 worktree에서 변경.",
+          "pain": "남이 쓴 코드를 이해하는 데 쓰는 시간이 코딩보다 길고, AI 도구는 프로젝트 구조를 파악하기도 전에 바꾸기 시작함.",
+          "idea": "소스 코드 없는 1파일 HTML 보고서 공유 + 계획·명령·diff마다 승인 + 로컬 모델 벤치마크(Model Lab). 무료·MIT, 베타(1인 개발).",
+          "notes": []
+        }
+      ],
+      "grafts": [
+        "Hub식 코디네이터 + Ottante식 \"세션 종료마다 검증\"을 sdlc-runner에 — 다중 에이전트 실행 시 결정만 사람에게 올리고, 세션 종료 때마다 참조 모델 대비 diff 검증을 표준 게이트로 넣으면 \"에이전트가 했다\"는 말을 숫자로 확인할 수 있음.",
+        "Remora식 장기 기억(충돌 자동 해결·15ms 미만 회상)을 ReMe/Mem0 메모리 계층 대안으로 검토 — Unify Continual-ARC식 \"메모리를 지우고 자기 자신과 비교\" 검증과 짝지어, 메모리 기능이 실제로 학습으로 이어지는지 수치로 확인.",
+        "NEXUS식 \"AI가 바꾸기 전 로컬 아키텍처 맵 + 승인 없인 변경 금지(별도 worktree·계획/명령/diff 승인)\"를 sdlc-runner 실행 환경의 보안 기본값으로 — SteerLatch식 권한 통제와 한 쌍으로, 에이전트에게 코드 변경 권한을 줄 때의 최소 권한·감사 로그 패턴."
+      ]
     }
   ]
 }
