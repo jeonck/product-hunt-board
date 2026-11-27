@@ -1386,6 +1386,87 @@
         "Remora식 장기 기억(충돌 자동 해결·15ms 미만 회상)을 ReMe/Mem0 메모리 계층 대안으로 검토 — Unify Continual-ARC식 \"메모리를 지우고 자기 자신과 비교\" 검증과 짝지어, 메모리 기능이 실제로 학습으로 이어지는지 수치로 확인.",
         "NEXUS식 \"AI가 바꾸기 전 로컬 아키텍처 맵 + 승인 없인 변경 금지(별도 worktree·계획/명령/diff 승인)\"를 sdlc-runner 실행 환경의 보안 기본값으로 — SteerLatch식 권한 통제와 한 쌍으로, 에이전트에게 코드 변경 권한을 줄 때의 최소 권한·감사 로그 패턴."
       ]
+    },
+    {
+      "date": "2026-11-27",
+      "theme": "\"에이전트에게 일을 맡긴 뒤\"의 날 — Contral(검증하며 가르침), Pushary Calls(놓친 승인 전화를 걸어줌), gpyou(GPU 조달), Ploid(사람 검색을 에이전트에게), snibl(읽은 것을 기억), Depost(내 글에서 학습)까지 에이전트 운영의 주변 인프라가 한꺼번에. 어제 \"함대를 굴리고 검증\"에서 오늘은 \"승인·호출·기억·조달\"로.",
+      "products": [
+        {
+          "name": "Wizstar R1",
+          "rank": "#1",
+          "url": "https://www.producthunt.com/products/wizstar/launches/wizstar-r1",
+          "tagline": "",
+          "summary": "Seedance 2.0급 제품 영상을 저비용으로 만드는 자체 비디오 모델 — 참조 이미지/영상 최대 9개로 5–15초 네이티브 오디오 영상 생성.",
+          "pain": "제품 영상 한 편에 촬영·편집 비용이 크고, 고품질 비디오 모델은 비싸서 반복 실험이 어려움.",
+          "idea": "자체 모델 R1로 저비용 생성 + 참조 9개 조합, 대상 멤버 무제한·크레딧 없는 생성으로 실험 자유도 확보. 애니메이션·3D 강점, 내부 테스트에서 Seedance 2.0 수준의 사용 가능 산출률(메이커 주장).",
+          "notes": []
+        },
+        {
+          "name": "Depost AI",
+          "rank": "#2",
+          "url": "https://www.producthunt.com/products/depost-ai",
+          "tagline": "",
+          "summary": "내 LinkedIn 글을 읽고 배우는 AI 에이전트 — 내 평균·내 니치 기준 스코어링, 내 목소리 초안 + 그래픽, Claude/ChatGPT 내 MCP 실행, 공식 API 발행.",
+          "pain": "AI 글쓰기 도구는 빈 프롬프트에서 시작해 모두 같은 목소리가 되고, 내 글 중 뭐가 먹히는지 알 수 없음.",
+          "idea": "내 데이터 기준선 대비 스코어링 + 내 목소리 학습 + 승인 후 발행. 오픈소스 Claude 플러그인·무료 프로필 분석기 제공.",
+          "notes": []
+        },
+        {
+          "name": "Contral",
+          "rank": "#3",
+          "url": "https://www.producthunt.com/products/contral",
+          "tagline": "",
+          "summary": "가르치면서 만드는 AI 코딩 에이전트 — BYO agent(Claude Code·Codex·Cursor·OpenCode·Gemini CLI·Copilot CLI), 턴마다 변경 vs 요청 비교 검증, 원클릭 턴 전체 undo, 변경마다 티칭 카드.",
+          "pain": "에이전트가 \"Done!\"이라 해도 안 된 경우가 많고, 읽을 수 없는 코드를 그대로 출하하게 됨.",
+          "idea": "턴마다 자동 검증(변경 없음·누락 함수·깨진 파일·플레이스홀더 감지, 작은/무료 모델엔 구체적 수정 지시 자동 생성) + Defense Mode로 이해 확인. 무료 시작(하루 30 메시지).",
+          "notes": []
+        },
+        {
+          "name": "Pushary Calls",
+          "rank": "#6",
+          "url": "https://www.producthunt.com/products/pushary/launches/pushary-calls",
+          "tagline": "",
+          "summary": "에이전트 승인 요청을 놓치면 전화로 알려줌 — 푸시 → 놓치면 음성 통화로 요청을 읽어주고 yes/no/대안 지시, 지정 시간대에만 울림, 승인자 기록 저장.",
+          "pain": "에이전트가 승인 대기 중인데 점심·외출 중이면 작업이 멈춰 있고, 푸시 알림은 묻히기 쉬움.",
+          "idea": "푸시 → 전화 에스컬레이션 + 음성 승인 + 누가 승인했는지 기록(감사 추적). Claude Code·Codex·Gemini CLI·Grok Build·Hermes 지원.",
+          "notes": []
+        },
+        {
+          "name": "snibl",
+          "rank": "#10",
+          "url": "https://www.producthunt.com/products/snibl",
+          "tagline": "",
+          "summary": "어떤 앱에서든 하이라이트한 텍스트를 저장하고 AI에 물어봄 — 로컬 라이브러리 우선, BYO 키(OpenAI·Anthropic·OpenRouter·Ollama 로컬) 또는 호스팅 애드온.",
+          "pain": "이메일·문서·API 노트에서 유용한 한 줄을 읽고도 나중에 어디서 봤는지 못 찾음; 북마크·스크린샷은 쌓이기만 함.",
+          "idea": "하이라이트 → 출처와 함께 로컬 저장 → \"rate limit에 대해 저장한 게 뭐지?\"라고 질문. 데이터 소유권 우선(로컬 우선, AI 기본 off). 무료: 캡처·무제한 로컬 라이브러리·검색, Pro $39 일회성.",
+          "notes": []
+        },
+        {
+          "name": "gpyou",
+          "rank": "#14",
+          "url": "https://www.producthunt.com/products/gpyou",
+          "tagline": "",
+          "summary": "GPU 클라우드의 OpenRouter — 전 세계 GPU 클라우드에서 24GB+ 재고 GPU를 최싸 순으로 나열, 한 명령으로 컨테이너·QLoRA 파인튜닝·vLLM 엔드포인트 실행, 매진 시 다음 오퍼로 자동 이동.",
+          "pain": "GPU 대여는 대시보드 여러 개·잔액 따로·H100 재고 새로고침 반복, 최신 GPU(B200/B300)는 구하기조차 어려움.",
+          "idea": "단일 CLI + 재고 통합 목록 + 자동 폴백 + 가격 사전 표시 + 초 단위 선불 과금, B200/B300 입고 알림·자동 대여. MCP 도구 find_gpus 무료, 공개 베타·SLA 없음(개발용).",
+          "notes": []
+        },
+        {
+          "name": "Ploid",
+          "rank": "#16",
+          "url": "https://www.producthunt.com/products/ploid",
+          "tagline": "",
+          "summary": "AI 에이전트용 사람 검색, 20억+ 프로필 — 역할·회사·스킬·위치로 검색, LinkedIn/X/Instagram/개인 사이트를 Superprofile로 병합, API·CLI·MCP 서버.",
+          "pain": "리크루팅·세일즈 에이전트에서 \"이 사람이 누구인가\"를 확인하는 단계가 늘 지저분하고 수작업.",
+          "idea": "20억+ 살아있는 인덱스를 DB처럼 검색 + 소셜·개인 사이트 병합 프로필, 요청당 최대 150건. 단, GDPR 접근·삭제는 이메일 경유(셀프서비스 아님) — 헌터 본인도 \"creepy\" 인정한 프라이버시 논란 지점.",
+          "notes": []
+        }
+      ],
+      "grafts": [
+        "Contral식 \"턴마다 검증(변경 vs 요청 비교) + 원클릭 undo\"를 sdlc-runner의 표준 게이트로 — 에이전트 턴 종료마다 diff 검증(변경 없음·누락·플레이스홀더)을 자동 수행하고, 실패 시 구체적 수정 지시를 재생성 루프에 넣으면 \"에이전트가 했다\"를 숫자로 확인할 수 있음. Ottante식 종료 시 검증과 한 쌍.",
+        "Pushary Calls식 \"승인 요청 → 푸시 → 놓치면 전화\" 에스컬레이션을 sdlc-runner의 인간 승인 게이트에 — 장시간 실행되는 에이전트 파이프라인에서 승인 대기로 멈추는 시간을 줄이고, 누가 언제 승인했는지 기록을 감사 로그로 남기는 패턴. hermes 장시간 작업·Kubespray 배포와 직결.",
+        "Ploid식 \"20억 프로필을 MCP로\"를 CTI·AI 보안 관점에서 — 에이전트가 사람을 DB처럼 검색하는 시대의 공격 표면(소셜 프로필 병합 → 피싱·소셜 엔지니어링 정찰 자동화)과 방어(노출 최소화·삭제권)를 AI 보안 글·강의 소재로. gpyou식 재고 통합은 homelab GPU 실험(RTX 4070 Ti 로컬 서빙 vs 클라우드 대여 손익분기) 비용 최적화 참고용으로."
+      ]
     }
   ]
 }
